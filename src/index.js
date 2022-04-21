@@ -44,6 +44,7 @@ for (let i = 0; i < NewString.length; i++) {
  */
 export const truncate = (string, length) => {
     return string.slice(0, length);
+    // либо .Substring
 };
 
 /**
@@ -83,4 +84,16 @@ export const quantityOfSymbols = (string, symbol) => {
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {};
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
+     let counter = 0;
+  let startPosition = 0;
+  while (true) {
+    if (string.toLowerCase().indexOf(symbol.toLowerCase(), startPosition) !== -1) {
+      counter++
+      startPosition = string.toLowerCase().indexOf(symbol, startPosition) + 1;
+    } else {
+      break;
+    }
+  };
+  return counter;
+};
