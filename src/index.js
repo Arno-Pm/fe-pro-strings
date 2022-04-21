@@ -59,7 +59,7 @@ export const truncate = (string, length) => {
  */
 export const quantityOfSymbols = (string, symbol) => { 
     let count = 0;
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < string.length; i++) {
         if(string[i].toUpperCase() === symbol.toUpperCase()){
             count++;
         }
