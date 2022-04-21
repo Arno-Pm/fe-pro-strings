@@ -4,7 +4,17 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {};
+export const replaceZAndVFromString = (string) => {
+    const modString = string.split('');
+    for (let i = 0; i < string.length; i++){
+        if(modString[i].toUpperCase()=== 'Z' || modString[i].toUpperCase() === 'V'){
+            modString [i]= '*';
+        }
+
+    }
+       
+            return modString.join('')
+};
 
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
@@ -16,7 +26,15 @@ export const replaceZAndVFromString = (string) => {};
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+export const changeWord = (string, word, newWord) => {
+const NewString = string.split(' ');
+for (let i = 0; i < NewString.length; i++) {
+    if (NewString[i].toLowerCase() === word.toLowerCase()) {
+        NewString[i] = newWord;
+    }
+  }
+  return NewString.join(' ');
+};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
@@ -24,7 +42,9 @@ export const changeWord = (string, word, newWord) => {};
  * @param {number} length
  * @returns {string}
  */
-export const truncate = (string, length) => {};
+export const truncate = (string, length) => {
+    return string.slice(0, length);
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -37,7 +57,16 @@ export const truncate = (string, length) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => {};
+export const quantityOfSymbols = (string, symbol) => { 
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(string[i].toUpperCase() === symbol.toUpperCase()){
+            count++;
+        }
+    }
+
+    return count;
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
